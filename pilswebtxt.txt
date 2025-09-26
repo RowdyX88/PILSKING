@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The House of King Pils</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'pils-gold': '#D4AF37',
+                        'pils-dark': '#1A1A1A',
+                        'pils-wood': '#5C4033',
+                        'pils-foam': '#F8F8F8',
+                    },
+                    fontFamily: {
+                        'royal': ['"Playfair Display"', 'serif'],
+                        'modern': ['"Inter"', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1A1A1A;
+            color: #F8F8F8;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #D4AF37;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .beer-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+        }
+        
+        .gold-border {
+            border: 2px solid #D4AF37;
+        }
+        
+        .scroll-down {
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+    </style>
+</head>
+<body class="bg-pils-dark text-pils-foam">
+    <!-- Hero Section with Vanta.js Waves -->
+    <div id="hero" class="relative h-screen flex flex-col justify-between overflow-hidden">
+        <!-- Navigation -->
+        <nav class="absolute top-0 left-0 right-0 z-50 py-6 px-6 md:px-12">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <i data-feather="award" class="text-pils-gold w-8 h-8"></i>
+                    <span class="text-2xl font-bold font-royal text-pils-gold">KING PILS</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#the-pils" class="nav-link text-pils-foam hover:text-pils-gold transition">THE PILS</a>
+                    <a href="#the-rules" class="nav-link text-pils-foam hover:text-pils-gold transition">THE RULES</a>
+                    <a href="#the-house" class="nav-link text-pils-foam hover:text-pils-gold transition">THE HOUSE</a>
+                    <a href="#the-king" class="nav-link text-pils-foam hover:text-pils-gold transition">THE KING</a>
+                </div>
+                <button class="md:hidden">
+                    <i data-feather="menu" class="text-pils-gold w-6 h-6"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 flex-grow flex flex-col items-center justify-center px-6 text-center">
+            <h1 class="text-5xl md:text-7xl font-bold font-royal mb-6 text-pils-gold">THE HOUSE OF KING PILS</h1>
+            <p class="text-xl md:text-2xl max-w-2xl mb-10">Where every sip makes you royalty. Bow to the golden brew.</p>
+            <div class="flex space-x-4">
+                <button class="bg-pils-gold text-pils-dark px-8 py-3 rounded-full font-bold hover:bg-opacity-90 transition">TASTE THE KING</button>
+                <button class="gold-border border-pils-gold text-pils-gold px-8 py-3 rounded-full font-bold hover:bg-pils-gold hover:text-pils-dark transition">BOOK A TABLE</button>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10 scroll-down">
+            <i data-feather="chevron-down" class="text-pils-gold w-8 h-8 animate-bounce"></i>
+        </div>
+
+        <!-- Background Animation -->
+        <script>
+            VANTA.WAVES({
+                el: "#hero",
+                mouseControls: true,
+                touchControls: true,
+                gyroControls: false,
+                minHeight: 200.00,
+                minWidth: 200.00,
+                scale: 1.00,
+                scaleMobile: 1.00,
+                color: 0xd4af37,
+                shininess: 50.00,
+                waveHeight: 20.00,
+                waveSpeed: 0.90,
+                zoom: 0.82
+            })
+        </script>
+    </div>
+
+    <!-- The Pils Section -->
+    <section id="the-pils" class="py-20 px-6 md:px-12 bg-pils-wood bg-opacity-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <h2 class="text-4xl font-bold font-royal mb-6 text-pils-gold">THE PILS</h2>
+                    <p class="text-lg mb-6">Our golden elixir is brewed with the precision of royal decree and the passion of centuries-old tradition.</p>
+                    <p class="text-lg mb-8">Each batch is a testament to our commitment to quality, using only the finest hops and barley from the kingdom's most fertile lands.</p>
+                    <button class="gold-border border-pils-gold text-pils-gold px-6 py-2 rounded-full font-bold hover:bg-pils-gold hover:text-pils-dark transition">LEARN THE BREW</button>
+                </div>
+                <div class="md:w-1/2 relative">
+                    <div class="relative">
+                        <img src="http://static.photos/food/640x360/42" alt="Golden Pilsner" class="rounded-lg shadow-xl gold-border">
+                        <div class="absolute -bottom-4 -right-4 bg-pils-gold text-pils-dark px-4 py-2 rounded-lg font-bold">
+                            ROYAL RESERVE
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Rules Section -->
+    <section id="the-rules" class="py-20 px-6 md:px-12 bg-pils-dark">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold font-royal mb-16 text-center text-pils-gold">THE RULES</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Rule Card 1 -->
+                <div class="beer-card bg-pils-wood bg-opacity-70 p-8 rounded-lg transition duration-300 ease-in-out hover:shadow-lg">
+                    <div class="text-pils-gold mb-4">
+                        <i data-feather="alert-triangle" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Respect the Waiters</h3>
+                    <p>They are the knights of the house. Disrespect them, and you disrespect the King himself.</p>
+                </div>
+                
+                <!-- Rule Card 2 -->
+                <div class="beer-card bg-pils-wood bg-opacity-70 p-8 rounded-lg transition duration-300 ease-in-out hover:shadow-lg">
+                    <div class="text-pils-gold mb-4">
+                        <i data-feather="droplet" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Don't Spill the Pils</h3>
+                    <p>Every drop is liquid gold. Waste not, lest you be banished from the kingdom.</p>
+                </div>
+                
+                <!-- Rule Card 3 -->
+                <div class="beer-card bg-pils-wood bg-opacity-70 p-8 rounded-lg transition duration-300 ease-in-out hover:shadow-lg">
+                    <div class="text-pils-gold mb-4">
+                        <i data-feather="users" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Be a King, Share Your Beer</h3>
+                    <p>True royalty is generous. A round for your subjects earns you honor in the court.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The House Section -->
+    <section id="the-house" class="py-20 px-6 md:px-12 bg-pils-wood bg-opacity-50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold font-royal mb-16 text-center text-pils-gold">THE HOUSE</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 text-pils-gold">OUR MENU</h3>
+                    <div class="space-y-6">
+                        <div class="border-b border-pils-gold border-opacity-30 pb-4">
+                            <div class="flex justify-between items-center">
+                                <h4 class="font-bold">King's Reserve Pilsner</h4>
+                                <span class="text-pils-gold font-bold">$8</span>
+                            </div>
+                            <p class="text-sm opacity-80">Our signature brew, aged to perfection</p>
+                        </div>
+                        <div class="border-b border-pils-gold border-opacity-30 pb-4">
+                            <div class="flex justify-between items-center">
+                                <h4 class="font-bold">Royal Pretzel Tower</h4>
+                                <span class="text-pils-gold font-bold">$12</span>
+                            </div>
+                            <p class="text-sm opacity-80">Served with three house-made mustards</p>
+                        </div>
+                        <div class="border-b border-pils-gold border-opacity-30 pb-4">
+                            <div class="flex justify-between items-center">
+                                <h4 class="font-bold">Knight's Feast Platter</h4>
+                                <span class="text-pils-gold font-bold">$24</span>
+                            </div>
+                            <p class="text-sm opacity-80">Charcuterie, cheeses, and house pickles</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 text-pils-gold">BOOK YOUR THRONE</h3>
+                    <form class="space-y-4">
+                        <div>
+                            <label class="block mb-2">Name</label>
+                            <input type="text" class="w-full bg-pils-dark bg-opacity-50 border border-pils-gold border-opacity-30 rounded px-4 py-2 focus:outline-none focus:ring-1 focus:ring-pils-gold">
+                        </div>
+                        <div>
+                            <label class="block mb-2">Date</label>
+                            <input type="date" class="w-full bg-pils-dark bg-opacity-50 border border-pils-gold border-opacity-30 rounded px-4 py-2 focus:outline-none focus:ring-1 focus:ring-pils-gold">
+                        </div>
+                        <div>
+                            <label class="block mb-2">Party Size</label>
+                            <select class="w-full bg-pils-dark bg-opacity-50 border border-pils-gold border-opacity-30 rounded px-4 py-2 focus:outline-none focus:ring-1 focus:ring-pils-gold">
+                                <option>1 person</option>
+                                <option>2 people</option>
+                                <option>3-4 people</option>
+                                <option>5-6 people</option>
+                                <option>7+ people</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="bg-pils-gold text-pils-dark px-6 py-3 rounded-full font-bold hover:bg-opacity-90 transition w-full">RESERVE YOUR SPOT</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The King Section -->
+    <section id="the-king" class="py-20 px-6 md:px-12 bg-pils-dark">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl font-bold font-royal mb-16 text-pils-gold">THE KING'S DECREES</h2>
+            
+            <div class="relative">
+                <div class="absolute -top-8 -left-8 text-pils-gold opacity-20">
+                    <i data-feather="book-open" class="w-24 h-24"></i>
+                </div>
+                <div class="relative bg-pils-wood bg-opacity-70 p-8 md:p-12 rounded-lg gold-border">
+                    <div class="space-y-6 text-lg">
+                        <p>1. Respect my waiters as you would respect the crown itself.</p>
+                        <p>2. Never argue with the pils - it knows what's best for you.</p>
+                        <p>3. Bow only to the bartender, for they control the golden flow.</p>
+                        <p>4. A true king shares his bounty - buy rounds for your court.</p>
+                        <p>5. Spillage is punishable by banishment from the kingdom.</p>
+                    </div>
+                </div>
+                <div class="absolute -bottom-8 -right-8 text-pils-gold opacity-20">
+                    <i data-feather="award" class="w-24 h-24"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-pils-wood py-12 px-6 md:px-12">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-2 mb-6 md:mb-0">
+                    <i data-feather="award" class="text-pils-gold w-8 h-8"></i>
+                    <span class="text-2xl font-bold font-royal text-pils-gold">KING PILS</span>
+                </div>
+                
+                <div class="flex space-x-6 mb-6 md:mb-0">
+                    <a href="#" class="text-pils-foam hover:text-pils-gold transition">
+                        <i data-feather="instagram" class="w-6 h-6"></i>
+                    </a>
+                    <a href="#" class="text-pils-foam hover:text-pils-gold transition">
+                        <i data-feather="facebook" class="w-6 h-6"></i>
+                    </a>
+                    <a href="#" class="text-pils-foam hover:text-pils-gold transition">
+                        <i data-feather="twitter" class="w-6 h-6"></i>
+                    </a>
+                </div>
+                
+                <div class="text-center md:text-right">
+                    <p class="text-pils-foam opacity-80">© 2023 The House of King Pils</p>
+                    <p class="text-sm text-pils-foam opacity-60">All rights reserved by royal decree</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky Book Now Button -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <button class="bg-pils-gold text-pils-dark p-4 rounded-full shadow-lg hover:scale-110 transition-transform">
+            <i data-feather="calendar" class="w-6 h-6"></i>
+        </button>
+    </div>
+
+    <script>
+        feather.replace();
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
